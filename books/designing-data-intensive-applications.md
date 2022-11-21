@@ -82,7 +82,8 @@ Systems that anticipate faults and can cope with them are called _fault-tolerant
 You should generally **prefer tolerating faults over preventing faults**.
 
 * **Hardware faults**. Until recently redundancy of hardware components was sufficient for most applications. As data volumes increase, more applications use a larger number of machines, proportionally increasing the rate of hardware faults. **There is a move towards systems that tolerate the loss of entire machines**. A system that tolerates machine failure can be patched one node at a time, without downtime of the entire system (_rolling upgrade_).
-* **Software errors**. It is unlikely that a large number of hardware components will fail at the same time. Software errors are a systematic error within the system, they tend to cause many more system failures than uncorrelated hardware faults.
+* **Software errors**. It is unlikely that a large number of hardware components will fail at the same time. Software errors are a systematic error within the system, they tend to cause many more system failures than uncorrelated hardware faults. Ex: Deadlocks, Bad System Input, Cascading Failures.
+  Resolutions: monitor and analyze, testing & process isolations. 
 * **Human errors**. Humans are known to be unreliable. Configuration errors by operators are a leading cause of outages. You can make systems more reliable:
     - Minimising the opportunities for error, peg: with admin interfaces that make easy to do the "right thing" and discourage the "wrong thing".
     - Provide fully featured non-production _sandbox_ environments where people can explore and experiment safely.
